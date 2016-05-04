@@ -1,9 +1,9 @@
 const koa = require('koa');
+const ShowsModel = require("../Models/Shows.js")
 
 module.exports.getAllShows = function * (next) {
-    console.log(next);
-  if ('POST' != this.method) return yield next;
-  this.body = yield [""];
+  if ('GET' != this.method) return yield next;
+  this.body = yield ShowsModel.getAllShows();
 };
 
 module.exports.getShowById = function * (next) {

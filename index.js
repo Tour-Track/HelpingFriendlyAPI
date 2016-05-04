@@ -2,7 +2,7 @@ const koa = require('koa');
 const router = require('koa-router')();
 const app = module.exports = koa();
 const shows = require('./API/Shows-api.js');
-const db = require('./db.js');
+const {db, Venues, Shows} = require('./db.js');
 
 app.use(router.routes());
 app.use(router.allowedMethods());
