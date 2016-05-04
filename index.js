@@ -1,10 +1,17 @@
 
 const koa = require('koa');
-const router = require('koa-router');
+const router = require('koa-router')();
 const app = module.exports = koa();
+const shows = require('./API/Shows-api.js');
+
+app.use(router.routes());
+app.use(router.allowedMethods());
 
 // app.use(router.get('/users', list));
-// app.use(router.get('/users/:id', show));
+router.get('/shows/', shows.getAllShows);
+router.get('/shows/:id/', shows.getShowById);
+router.get('/shows/:id/setlists', shows.getSetlistsByShowId);
+
 
 if (!module.parent) app.listen(3000);
 console.log('running on 3000')
