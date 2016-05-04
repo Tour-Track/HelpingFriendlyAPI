@@ -1,4 +1,6 @@
-const router = require('koa-router')();
+const router = require('koa-router')({
+  prefix: '/API'
+});
 const shows = require('./API/Shows-api.js');
 const venues = require('./API/Venues-api.js');
 const {db, Venues, Shows} = require('./db.js');

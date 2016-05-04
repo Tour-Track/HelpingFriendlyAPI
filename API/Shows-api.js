@@ -7,9 +7,8 @@ module.exports.getAllShows = function * (next) {
 };
 
 module.exports.getShowById = function * (next) {
-    console.log(this);
   if ('GET' != this.method) return yield next;
-  this.body = yield ["METHOD to DB call here"];
+  this.body = yield ShowsModel.getShowById(+this.params.id);
 };
 
 // This must be avoided, use ajax in the view.
