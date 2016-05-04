@@ -23,12 +23,29 @@ describe('Routes', function() {
         .expect(200, done);
     });
   });
-
-  describe('GET /songs/poorlyspelledword', function() {
-    it('should return 404', function(done) {
+  describe('GET API/shows/5', function() {
+    it('should return 200', function(done) {
       request()
-        .get('/API/notfound')
-        .expect(404, done);
+        .get('/API/shows')
+        .expect('Content-Type', /json/)
+        .expect(200, done);
     });
   });
+  describe('GET API/shows', function() {
+    it('should return 200', function(done) {
+      request()
+        .get('/API/shows')
+        .expect('Content-Type', /json/)
+        .expect(200, done);
+    });
+  });
+  describe('GET API/venues/3', function() {
+    it('should return 200', function(done) {
+      request()
+        .get('/API/shows')
+        .expect('Content-Type', /json/)
+        .expect(200, done);
+    });
+  });
+
 });
