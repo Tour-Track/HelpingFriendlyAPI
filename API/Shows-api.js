@@ -17,9 +17,3 @@ module.exports.getSetlistsByShowId = function * (next) {
   if ('GET' != this.method) return yield next;
   this.body = yield ["Setlist for shows returned here"];
 };
-
-// router.get('/', function *(next) {  
-//     title = decodeURI(title);
-//   var res = yield Array.apply(null, {length: 100}).forEach( () => { console.log('logging')} )
-//   this.body = res;
-// });
